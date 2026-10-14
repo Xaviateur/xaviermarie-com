@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xavier Marie</title>
+<meta name="description" content="Xavier Marie, ethnologue et chercheur en expérience utilisateur. Projets : Ramps are Beautiful, recherche UX, et d'autres à venir.">
+<meta property="og:title" content="Xavier Marie">
+<meta property="og:description" content="Ethnologue et chercheur en expérience utilisateur. Projets et contact.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xaviermarie.com/">
+<meta name="theme-color" content="#17202E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%2317202E'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-style='italic' text-anchor='middle' fill='%23E9ECEE'%3EXM%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="./fonts/literata-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Literata (SIL Open Font License, see fonts/OFL.txt), self-hosted: no request to Google */
+@font-face { font-family: 'Literata'; font-style: normal; font-weight: 200 900; font-display: swap;
+  src: url('./fonts/literata-latin-opsz-normal.woff2') format('woff2-variations'); }
+@font-face { font-family: 'Literata'; font-style: italic; font-weight: 200 900; font-display: swap;
+  src: url('./fonts/literata-latin-opsz-italic.woff2') format('woff2-variations'); }
+:root {
+  --paper: #E9ECEE;
+  --paper-2: #DDE2E6;
+  --ink: #17202E;
+  --muted: #475263;     /* 6.6:1 on paper */
+  --cobalt: #2B45C9;    /* links, 6.4:1 on paper */
+  --rule: #17202E;
+  --ramps: #B85C3C;
+  --ux: #2B45C9;
+  --next: #8A94A3;
+  --serif: 'Literata', Georgia, serif;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: var(--paper); }
+body {
+  font-family: var(--serif); font-optical-sizing: auto;
+  font-size: clamp(1.02rem, .96rem + .3vw, 1.2rem); line-height: 1.6;
+  color: var(--ink); background: var(--paper);
+  min-height: 100vh; display: flex; flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--cobalt); text-underline-offset: .2em; text-decoration-thickness: 1px; }
+:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 4px; }
+
+.wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
+
+/* Top line */
+.top { display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; }
+.mono-x { font-style: italic; font-weight: 600; font-size: 1.05rem; letter-spacing: .02em; }
+.lang { display: flex; gap: .25rem; }
+.lang button {
+  font: inherit; font-size: .95rem; background: none; border: 0; color: var(--muted);
+  padding: .35rem .55rem; min-width: 2.75rem; min-height: 2.75rem; cursor: pointer; border-radius: 2px;
+}
+.lang button[aria-pressed="true"] { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: .3em; text-decoration-thickness: 2px; }
+
+/* Name: the one loud thing */
+.intro { padding: clamp(3rem, 10vw, 8rem) 0 clamp(2.5rem, 6vw, 4.5rem); }
+h1 {
+  font-weight: 650; font-variation-settings: 'opsz' 72;
+  font-size: clamp(4rem, 22vw, 13.5rem); line-height: .82; letter-spacing: -.045em;
+  margin-left: -.04em;
+}
+h1 .last { display: block; font-style: italic; font-weight: 300; padding-left: clamp(1.5rem, 9vw, 9rem); }
+.bio { max-width: 34ch; margin-top: clamp(1.75rem, 4vw, 2.75rem); font-size: clamp(1.15rem, 1rem + .8vw, 1.55rem); line-height: 1.45; color: var(--ink); }
+.bio span { display: block; color: var(--muted); font-style: italic; margin-top: .35rem; font-size: .85em; }
+
+/* Index of projects */
+.index-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid var(--rule); padding-bottom: .6rem; }
+.index-head h2 { font-weight: 600; font-size: 1.1rem; }
+.index-head p { color: var(--muted); font-size: .9rem; }
+.projects { list-style: none; }
+.projects li { border-bottom: 1px solid rgba(23,32,46,.35); }
+.row {
+  position: relative; display: grid; grid-template-columns: 2.25rem minmax(0, 1.1fr) minmax(0, 1.6fr) 9rem;
+  gap: 1rem 1.5rem; align-items: baseline; padding: 1.6rem 0; color: inherit; text-decoration: none;
+  isolation: isolate;
+}
+.row::before {   /* project colour slides in on hover/focus */
+  content: ''; position: absolute; inset: 0 calc(var(--gutter) * -1); z-index: -1;
+  background: var(--tint, var(--paper-2)); transform: scaleX(0); transform-origin: left;
+}
+@media (prefers-reduced-motion: no-preference) { .row::before { transition: transform .45s cubic-bezier(.2,.7,.2,1); } }
+a.row:hover::before, a.row:focus-visible::before { transform: scaleX(1); }
+a.row:focus-visible { outline-offset: -3px; }
+.glyph { width: 1.6rem; height: 1rem; align-self: center; }
+.p-name { font-size: clamp(1.45rem, 1.1rem + 1.4vw, 2.3rem); font-weight: 600; line-height: 1.1; letter-spacing: -.015em; }
+.p-desc { color: var(--muted); font-size: .98rem; max-width: 46ch; }
+.p-state { font-size: .9rem; text-align: right; white-space: nowrap; }
+.p-state.live { color: var(--ink); }
+.p-state.live::before { content: ''; display: inline-block; width: .55rem; height: .55rem; border-radius: 50%; background: #2F7A4A; margin-right: .5rem; vertical-align: .05em; }
+.p-state.soon { color: var(--muted); font-style: italic; }
+.row.static .p-name { color: var(--muted); font-weight: 400; font-style: italic; }
+a.row .p-name { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: .15em; }
+a.row:hover .p-name { text-decoration-color: currentColor; }
+
+@media (max-width: 760px) {
+  .row { grid-template-columns: 1.9rem minmax(0, 1fr); }
+  .p-desc, .p-state { grid-column: 2; text-align: left; }
+  .index-head p { display: none; }
+}
+
+/* Contact */
+.contact { margin-top: auto; padding-top: clamp(3.5rem, 8vw, 6rem); padding-bottom: 2.5rem; display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; align-items: flex-end; }
+.contact p { font-size: clamp(1.1rem, 1rem + .6vw, 1.45rem); }
+.contact .small { font-size: .85rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap top">
+  <span class="mono-x" aria-hidden="true">X.M.</span>
+  <div class="lang" role="group" aria-label="Langue / Language">
+    <button type="button" data-lang="fr" aria-pressed="true" lang="fr">FR</button>
+    <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+  </div>
+</div>
+
+<main class="wrap">
+  <header class="intro">
+    <h1>Xavier <span class="last">Marie</span></h1>
+    <p class="bio"><span data-i="bio" style="display:inline;color:inherit;font-style:normal;font-size:1em;margin:0">Ethnologue et chercheur en expérience utilisateur.</span>
+      <span data-i="place">Entre Londres et le sud de la France.</span></p>
+  </header>
+
+  <section aria-labelledby="h-projects">
+    <div class="index-head">
+      <h2 id="h-projects" data-i="projects">Projets</h2>
+      <p data-i="projects-note">Ce qui est en ligne, et ce qui se prépare.</p>
+    </div>
+    <ul class="projects">
+      <li>
+        <a class="row" href="https://ramps.xaviermarie.com/" style="--tint:#EBD5C9">
+          <svg class="glyph" viewBox="0 0 24 14" aria-hidden="true"><polygon points="0,14 24,12 24,14" fill="#C9845D"/><polygon points="0,14 24,2 24,14" fill="#B85C3C"/></svg>
+          <span class="p-name">Ramps are Beautiful</span>
+          <span class="p-desc" data-i="ramps-desc">L'architecture de l'accessibilité : galerie, guides et essais, d'après le livre de Michael Daniels (1986).</span>
+          <span class="p-state live" data-i="live">En ligne</span>
+        </a>
+      </li>
+      <li>
+        <div class="row static-soon">
+          <svg class="glyph" viewBox="0 0 24 14" aria-hidden="true"><rect x="5" y="0" width="14" height="14" fill="none" stroke="#2B45C9" stroke-width="2.5"/><circle cx="12" cy="7" r="2.6" fill="#2B45C9"/></svg>
+          <span class="p-name" data-i="ux-name">Recherche UX</span>
+          <span class="p-desc" data-i="ux-desc">Vitrine professionnelle : utilisabilité et confiance dans l'IA, recherche ethnographique, missions et méthodes.</span>
+          <span class="p-state soon" data-i="soon">En préparation</span>
+        </div>
+      </li>
+      <li>
+        <div class="row static">
+          <svg class="glyph" viewBox="0 0 24 14" aria-hidden="true"><line x1="2" y1="7" x2="22" y2="7" stroke="#8A94A3" stroke-width="2" stroke-dasharray="3 3"/></svg>
+          <span class="p-name" data-i="next-name">D'autres projets suivront</span>
+          <span class="p-desc" data-i="next-desc">Écriture, histoire, architecture.</span>
+          <span class="p-state soon"></span>
+        </div>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer class="wrap contact">
+  <p><span data-i="write">Pour m'écrire :</span> <a href="mailto:xaviateur@gmail.com">xaviateur@gmail.com</a></p>
+  <p class="small">© 2026 Xavier Marie</p>
+</footer>
+
+<script>
+const t = {
+  fr: {
+    bio: 'Ethnologue et chercheur en expérience utilisateur.',
+    place: 'Entre Londres et le sud de la France.',
+    projects: 'Projets', 'projects-note': 'Ce qui est en ligne, et ce qui se prépare.',
+    'ramps-desc': "L'architecture de l'accessibilité : galerie, guides et essais, d'après le livre de Michael Daniels (1986).",
+    live: 'En ligne', soon: 'En préparation',
+    'ux-name': 'Recherche UX',
+    'ux-desc': "Vitrine professionnelle : utilisabilité et confiance dans l'IA, recherche ethnographique, missions et méthodes.",
+    'next-name': "D'autres projets suivront", 'next-desc': 'Écriture, histoire, architecture.',
+    write: "Pour m'écrire :",
+    desc: "Xavier Marie, ethnologue et chercheur en expérience utilisateur."
+  },
+  en: {
+    bio: 'Ethnologist and user experience researcher.',
+    place: 'Between London and the south of France.',
+    projects: 'Projects', 'projects-note': "What's live, and what's in the works.",
+    'ramps-desc': "The architecture of accessibility: gallery, guides and essays, after Michael Daniels' 1986 book.",
+    live: 'Live', soon: 'In preparation',
+    'ux-name': 'UX Research',
+    'ux-desc': 'Professional portfolio: AI usability and trust, ethnographic research, engagements and methods.',
+    'next-name': 'More projects to come', 'next-desc': 'Writing, history, architecture.',
+    write: 'Write to me:',
+    desc: 'Xavier Marie, ethnologist and user experience researcher.'
+  }
+};
+function setLang(l) {
+  l = l === 'en' ? 'en' : 'fr';
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-i]').forEach(el => { const v = t[l][el.dataset.i]; if (v) el.textContent = v; });
+  document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === l)));
+  document.querySelector('meta[name=description]').setAttribute('content', t[l].desc);
+  try { localStorage.setItem('xm-lang', l); } catch (e) {}
+}
+document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+let saved = null; try { saved = localStorage.getItem('xm-lang'); } catch (e) {}
+setLang(saved || ((navigator.language || 'fr').toLowerCase().startsWith('en') ? 'en' : 'fr'));
+</script>
+</body>
+</html>
