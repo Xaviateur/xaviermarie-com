@@ -4,185 +4,181 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Xavier Marie</title>
-<meta name="description" content="Xavier Marie, ethnologue et chercheur en expérience utilisateur. Projets : Ramps are Beautiful, recherche UX, et d'autres à venir.">
+<meta name="description" content="Xavier Marie, ethnologue et chercheur en expérience utilisateur. Projets : Ramps are Beautiful, User Friendly, deux livres en cours.">
 <meta property="og:title" content="Xavier Marie">
 <meta property="og:description" content="Ethnologue et chercheur en expérience utilisateur. Projets et contact.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://xaviermarie.com/">
-<meta name="theme-color" content="#17202E">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%2317202E'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-style='italic' text-anchor='middle' fill='%23E9ECEE'%3EXM%3C/text%3E%3C/svg%3E">
-<link rel="preload" href="./fonts/literata-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#FBFBF8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23FBFBF8'/%3E%3Cpath d='M0 16H64M0 32H64M0 48H64' stroke='%23BFC8EC' stroke-width='2'/%3E%3Cpath d='M14 0V64' stroke='%23D8485E' stroke-width='3'/%3E%3Ctext x='38' y='44' font-family='Arial,sans-serif' font-weight='800' font-size='30' text-anchor='middle' fill='%231B2240'%3EX%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="./fonts/schibsted-grotesk-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/schibsted-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-/* Literata (SIL Open Font License, see fonts/OFL.txt), self-hosted: no request to Google */
-@font-face { font-family: 'Literata'; font-style: normal; font-weight: 200 900; font-display: swap;
-  src: url('./fonts/literata-latin-opsz-normal.woff2') format('woff2-variations'); }
-@font-face { font-family: 'Literata'; font-style: italic; font-weight: 200 900; font-display: swap;
-  src: url('./fonts/literata-latin-opsz-italic.woff2') format('woff2-variations'); }
+/* Schibsted Grotesk (SIL Open Font License, see fonts/OFL-SchibstedGrotesk.txt), self-hosted */
+@font-face { font-family: 'Schibsted Grotesk'; font-weight: 400; font-display: swap; src: url('./fonts/schibsted-grotesk-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Schibsted Grotesk'; font-weight: 500; font-display: swap; src: url('./fonts/schibsted-grotesk-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Schibsted Grotesk'; font-weight: 800; font-display: swap; src: url('./fonts/schibsted-grotesk-latin-800-normal.woff2') format('woff2'); }
+
+/* Each project title is set in its own face, to show it has its own identity:
+   Figtree (OFL) for User Friendly, Libre Baskerville (OFL) for the history essay,
+   Yellowtail (Apache 2.0) for the novel. Licences in fonts/. */
+@font-face { font-family: 'Figtree'; font-weight: 800; font-display: swap; src: url('./fonts/figtree-latin-800-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Libre Baskerville'; font-weight: 400; font-display: swap; src: url('./fonts/libre-baskerville-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Yellowtail'; font-weight: 400; font-display: swap; src: url('./fonts/yellowtail-latin-400-normal.woff2') format('woff2'); }
+
+/* A Seyès notebook page: 8 mm squares with three fine lines in between, and a red margin.
+   One square = --u. Every size and gap is a multiple of it, so text lands on the ruling. */
 :root {
-  --paper: #E9ECEE;
-  --paper-2: #DDE2E6;
-  --ink: #17202E;
-  --muted: #475263;     /* 6.6:1 on paper */
-  --cobalt: #2B45C9;    /* links, 6.4:1 on paper */
-  --rule: #17202E;
-  --ramps: #B85C3C;
-  --ux: #2B45C9;
-  --next: #8A94A3;
-  --serif: 'Literata', Georgia, serif;
-  --gutter: clamp(1.25rem, 5vw, 4rem);
+  --u: 32px;
+  --paper: #FBFBF8;
+  --fine: #E7EAF6;
+  --strong: #BFC8EC;
+  --margin: #D8485E;
+  --ink: #1B2240;      /* 14.9:1 on paper */
+  --blue: #2438A8;     /* 8.6:1 */
+  --pencil: #4F5670;   /* 7.2:1 */
+  --live: #2F7A4A;
+  --wip: #E07A1F;
+  --terracotta: #C4502B;
+  --sans: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --mx: calc(var(--u) * 6);
 }
+@media (max-width: 760px) { :root { --u: 24px; --mx: calc(var(--u) * 1.5); } }
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { background: var(--paper); }
 body {
-  font-family: var(--serif); font-optical-sizing: auto;
-  font-size: clamp(1.02rem, .96rem + .3vw, 1.2rem); line-height: 1.6;
-  color: var(--ink); background: var(--paper);
-  min-height: 100vh; display: flex; flex-direction: column;
+  font-family: var(--sans); color: var(--ink);
+  font-size: calc(var(--u) * .56); line-height: var(--u);
+  min-height: 100vh;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(to right, transparent calc(var(--mx) - 1px), var(--margin) calc(var(--mx) - 1px), var(--margin) calc(var(--mx) + 1px), transparent calc(var(--mx) + 1px)),
+    repeating-linear-gradient(to bottom, transparent 0 calc(var(--u) - 1px), var(--strong) calc(var(--u) - 1px) var(--u)),
+    repeating-linear-gradient(to bottom, transparent 0 calc(var(--u) / 4 - 1px), var(--fine) calc(var(--u) / 4 - 1px) calc(var(--u) / 4)),
+    repeating-linear-gradient(to right, transparent 0 calc(var(--u) - 1px), var(--fine) calc(var(--u) - 1px) var(--u));
   -webkit-font-smoothing: antialiased;
 }
-a { color: var(--cobalt); text-underline-offset: .2em; text-decoration-thickness: 1px; }
-:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 4px; }
+a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: .2em; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
 
-.wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
+/* Every row: the margin (annotations) and the page (content) */
+.line { display: grid; grid-template-columns: var(--mx) minmax(0, 1fr); }
+.note { padding: 0 calc(var(--u) * .5); text-align: right; color: var(--pencil); font-size: .85em; white-space: nowrap; }
+.main { grid-column: 2; padding-left: calc(var(--u) * .75); padding-right: var(--u); max-width: calc(var(--u) * 30); min-width: 0; }
+/* sit text on the strong line rather than between two */
+.bl { position: relative; top: calc(var(--u) * .2); }
 
-/* Top line */
-.top { display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; }
-.mono-x { font-style: italic; font-weight: 600; font-size: 1.05rem; letter-spacing: .02em; }
-.lang { display: flex; gap: .25rem; }
-.lang button {
-  font: inherit; font-size: .95rem; background: none; border: 0; color: var(--muted);
-  padding: .35rem .55rem; min-width: 2.75rem; min-height: 2.75rem; cursor: pointer; border-radius: 2px;
-}
-.lang button[aria-pressed="true"] { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: .3em; text-decoration-thickness: 2px; }
+.top { padding-top: var(--u); }
+.top .main { display: flex; justify-content: space-between; align-items: center; }
+.lang { display: flex; }
+.lang button { font: inherit; background: none; border: 0; color: var(--pencil); padding: 0 .5rem; min-width: 2.75rem; min-height: 2.75rem; cursor: pointer; }
+.lang button[aria-pressed="true"] { color: var(--ink); font-weight: 800; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .3em; }
 
-/* Name: the one loud thing */
-.intro { padding: clamp(3rem, 10vw, 8rem) 0 clamp(2.5rem, 6vw, 4.5rem); }
-h1 {
-  font-weight: 650; font-variation-settings: 'opsz' 72;
-  font-size: clamp(4rem, 22vw, 13.5rem); line-height: .82; letter-spacing: -.045em;
-  margin-left: -.04em;
-}
-h1 .last { display: block; font-style: italic; font-weight: 300; padding-left: clamp(1.5rem, 9vw, 9rem); }
-.bio { max-width: 34ch; margin-top: clamp(1.75rem, 4vw, 2.75rem); font-size: clamp(1.15rem, 1rem + .8vw, 1.55rem); line-height: 1.45; color: var(--ink); }
-.bio span { display: block; color: var(--muted); font-style: italic; margin-top: .35rem; font-size: .85em; }
+.name { margin-top: calc(var(--u) * 3); }
+h1 { font-weight: 800; font-size: calc(var(--u) * 4.3); line-height: calc(var(--u) * 4); letter-spacing: -.055em; margin-left: -.04em; position: relative; top: calc(var(--u) * .55); }
+.bio { margin-top: calc(var(--u) * 2); font-size: calc(var(--u) * .75); max-width: 34ch; }
+.bio2 { margin-top: 0; color: var(--pencil); }
 
-/* Index of projects */
-.index-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid var(--rule); padding-bottom: .6rem; }
-.index-head h2 { font-weight: 600; font-size: 1.1rem; }
-.index-head p { color: var(--muted); font-size: .9rem; }
-.projects { list-style: none; }
-.projects li { border-bottom: 1px solid rgba(23,32,46,.35); }
-.row {
-  position: relative; display: grid; grid-template-columns: 2.25rem minmax(0, 1.1fr) minmax(0, 1.6fr) 9rem;
-  gap: 1rem 1.5rem; align-items: baseline; padding: 1.6rem 0; color: inherit; text-decoration: none;
-  isolation: isolate;
-}
-.row::before {   /* project colour slides in on hover/focus */
-  content: ''; position: absolute; inset: 0 calc(var(--gutter) * -1); z-index: -1;
-  background: var(--tint, var(--paper-2)); transform: scaleX(0); transform-origin: left;
-}
-@media (prefers-reduced-motion: no-preference) { .row::before { transition: transform .45s cubic-bezier(.2,.7,.2,1); } }
-a.row:hover::before, a.row:focus-visible::before { transform: scaleX(1); }
-a.row:focus-visible { outline-offset: -3px; }
-.glyph { width: 1.6rem; height: 1rem; align-self: center; }
-.p-name { font-size: clamp(1.45rem, 1.1rem + 1.4vw, 2.3rem); font-weight: 600; line-height: 1.1; letter-spacing: -.015em; }
-.p-desc { color: var(--muted); font-size: .98rem; max-width: 46ch; }
-.p-state { font-size: .9rem; text-align: right; white-space: nowrap; }
-.p-state.live { color: var(--ink); }
-.p-state.live::before { content: ''; display: inline-block; width: .55rem; height: .55rem; border-radius: 50%; background: #2F7A4A; margin-right: .5rem; vertical-align: .05em; }
-.p-state.soon { color: var(--muted); font-style: italic; }
-.row.static .p-name { color: var(--muted); font-weight: 400; font-style: italic; }
-a.row .p-name { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: .15em; }
-a.row:hover .p-name { text-decoration-color: currentColor; }
+.projects-h { margin-top: calc(var(--u) * 3); }
+h2 { font-size: 1em; font-weight: 800; }
+.entries { list-style: none; margin-top: var(--u); }
+.entry { padding-bottom: var(--u); }
+.entry .note { line-height: calc(var(--u) * 2); top: calc(var(--u) * .4); }
+.title { display: inline-block; font-size: calc(var(--u) * 1.1); line-height: calc(var(--u) * 2); font-weight: 800; letter-spacing: -.03em; color: var(--ink); text-decoration: none; top: calc(var(--u) * .4); }
+a.title:hover, a.title:focus-visible { color: var(--blue); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .15em; }
+.t-uf { font-family: 'Figtree', 'Avenir Next', Avenir, sans-serif; font-weight: 800; letter-spacing: -.03em; }
+.t-hod { font-family: 'Libre Baskerville', 'Baskerville', Georgia, serif; font-weight: 400; letter-spacing: -.01em; font-size: calc(var(--u) * 1.02) !important; }
+.t-rosa { font-family: 'Yellowtail', 'Brush Script MT', cursive; font-weight: 400; letter-spacing: 0; font-size: calc(var(--u) * 1.4) !important; }
+.title .sw { display: inline-block; width: .5em; height: .62em; margin-left: .3em; vertical-align: baseline; }
+.entry p { color: var(--pencil); max-width: 52ch; }
+.state::before { content: ''; display: inline-block; width: .55em; height: .55em; border-radius: 50%; margin-right: .45em; vertical-align: .02em; }
+.state.live::before { background: var(--live); }
+.state.wip::before { background: var(--wip); }
+
+.contact { margin-top: calc(var(--u) * 2); padding-bottom: calc(var(--u) * 2); }
+.contact .big { font-size: calc(var(--u) * .75); }
+.contact .small { color: var(--pencil); }
 
 @media (max-width: 760px) {
-  .row { grid-template-columns: 1.9rem minmax(0, 1fr); }
-  .p-desc, .p-state { grid-column: 2; text-align: left; }
-  .index-head p { display: none; }
+  .note { display: none; }
+  .note.keep { display: block; grid-column: 2; grid-row: 1; text-align: left; padding: 0 calc(var(--u) * .75); line-height: var(--u); top: calc(var(--u) * .2); }
+  .line:has(.note.keep) > .main { grid-row: 2; }
+  .main { padding-right: calc(var(--u) * .75); }
+  h1 { font-size: calc(var(--u) * 3.1); line-height: calc(var(--u) * 3); top: calc(var(--u) * .45); }
+  .title { font-size: calc(var(--u) * 1.05); line-height: calc(var(--u) * 1.5); top: calc(var(--u) * .3); }
 }
-
-/* Contact */
-.contact { margin-top: auto; padding-top: clamp(3.5rem, 8vw, 6rem); padding-bottom: 2.5rem; display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; align-items: flex-end; }
-.contact p { font-size: clamp(1.1rem, 1rem + .6vw, 1.45rem); }
-.contact .small { font-size: .85rem; color: var(--muted); }
 </style>
 </head>
 <body>
-<div class="wrap top">
-  <span class="mono-x" aria-hidden="true">X.M.</span>
-  <div class="lang" role="group" aria-label="Langue / Language">
-    <button type="button" data-lang="fr" aria-pressed="true" lang="fr">FR</button>
-    <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+<header class="line top">
+  <div class="main">
+    <span class="bl">xaviermarie.com</span>
+    <div class="lang" role="group" aria-label="Langue / Language">
+      <button type="button" data-lang="fr" aria-pressed="true" lang="fr">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+    </div>
   </div>
-</div>
+</header>
 
-<main class="wrap">
-  <header class="intro">
-    <h1>Xavier <span class="last">Marie</span></h1>
-    <p class="bio"><span data-i="bio" style="display:inline;color:inherit;font-style:normal;font-size:1em;margin:0">Ethnologue et chercheur en expérience utilisateur.</span>
-      <span data-i="place">Entre Londres et le sud de la France.</span></p>
-  </header>
+<main>
+  <div>
+    <div class="line name"><div class="main"><h1>Xavier Marie</h1></div></div>
+    <div class="line"><div class="main"><p class="bio bl" data-i="bio">Ethnologue et chercheur en expérience utilisateur.</p></div></div>
+    <div class="line"><div class="main"><p class="bio bio2 bl" data-i="place">Entre Londres, Paris et Montpellier.</p></div></div>
+  </div>
 
   <section aria-labelledby="h-projects">
-    <div class="index-head">
-      <h2 id="h-projects" data-i="projects">Projets</h2>
-      <p data-i="projects-note">Ce qui est en ligne, et ce qui se prépare.</p>
-    </div>
-    <ul class="projects">
-      <li>
-        <a class="row" href="https://ramps.xaviermarie.com/" style="--tint:#EBD5C9">
-          <svg class="glyph" viewBox="0 0 24 14" aria-hidden="true"><polygon points="0,14 24,12 24,14" fill="#C9845D"/><polygon points="0,14 24,2 24,14" fill="#B85C3C"/></svg>
-          <span class="p-name">Ramps are Beautiful</span>
-          <span class="p-desc" data-i="ramps-desc">L'architecture de l'accessibilité : galerie, guides et essais, d'après le livre de Michael Daniels (1986).</span>
-          <span class="p-state live" data-i="live">En ligne</span>
-        </a>
+    <div class="line projects-h"><div class="main"><h2 id="h-projects" class="bl" data-i="projects">Projets</h2></div></div>
+    <ul class="entries">
+      <li class="entry">
+        <div class="line"><span class="note bl state live keep" data-i="live">En ligne</span><div class="main"><a class="title bl" href="https://ramps.xaviermarie.com/">Ramps are Beautiful<svg class="sw" viewBox="335 70 515 655" aria-hidden="true" focusable="false"><g fill="#C4502B"><path d="M833.556,367.574c-7.753-7.955-18.586-12.155-29.656-11.549l-133.981,7.458l73.733-83.975 c10.504-11.962,13.505-27.908,9.444-42.157c-2.143-9.764-8.056-18.648-17.14-24.324c-0.279-0.199-176.247-102.423-176.247-102.423 c-14.369-8.347-32.475-6.508-44.875,4.552l-85.958,76.676c-15.837,14.126-17.224,38.416-3.097,54.254 c14.128,15.836,38.419,17.227,54.255,3.096l65.168-58.131l53.874,31.285l-95.096,108.305 c-39.433,6.431-74.913,24.602-102.765,50.801l49.66,49.66c22.449-20.412,52.256-32.871,84.918-32.871 c69.667,0,126.346,56.68,126.346,126.348c0,32.662-12.459,62.467-32.869,84.916l49.657,49.66 c33.08-35.166,53.382-82.484,53.382-134.576c0-31.035-7.205-60.384-20.016-86.482l51.861-2.889l-12.616,154.75 c-1.725,21.152,14.027,39.695,35.18,41.422c1.059,0.086,2.116,0.127,3.163,0.127c19.806,0,36.621-15.219,38.257-35.306 l16.193-198.685C845.235,386.445,841.305,375.527,833.556,367.574z"/><path d="M762.384,202.965c35.523,0,64.317-28.797,64.317-64.322c0-35.523-28.794-64.323-64.317-64.323 c-35.527,0-64.323,28.8-64.323,64.323C698.061,174.168,726.856,202.965,762.384,202.965z"/><path d="M535.794,650.926c-69.668,0-126.348-56.68-126.348-126.348c0-26.256,8.056-50.66,21.817-70.887l-50.196-50.195 c-26.155,33.377-41.791,75.393-41.791,121.082c0,108.535,87.983,196.517,196.518,196.517c45.691,0,87.703-15.636,121.079-41.792 l-50.195-50.193C586.452,642.867,562.048,650.926,535.794,650.926z"/></g></svg></a></div></div>
+        <div class="line"><div class="main"><p class="bl" data-i="ramps-desc">L'architecture de l'accessibilité : galerie, guides et essais, d'après le livre de Michael Daniels (1986).</p></div></div>
       </li>
-      <li>
-        <a class="row" href="https://user-friendly.fr/" style="--tint:#D3E0DC">
-          <svg class="glyph" viewBox="0 0 24 14" aria-hidden="true"><rect x="5" y="0" width="14" height="14" fill="none" stroke="#1F6F66" stroke-width="2.5"/><circle cx="12" cy="7" r="2.6" fill="#1F6F66"/></svg>
-          <span class="p-name">User Friendly</span>
-          <span class="p-desc" data-i="ux-desc">Recherche UX : utilisabilité et confiance dans l'IA, recherche ethnographique, accompagnement des équipes.</span>
-          <span class="p-state live" data-i="live">En ligne</span>
-        </a>
+      <li class="entry">
+        <div class="line"><span class="note bl state live keep" data-i="live">En ligne</span><div class="main"><a class="title t-uf bl" href="https://user-friendly.fr/">User Friendly<svg class="sw" viewBox="0 0 10 13" aria-hidden="true" focusable="false"><rect x="4" y="0" width="2.2" height="13" fill="#1F6F66"/></svg></a></div></div>
+        <div class="line"><div class="main"><p class="bl" data-i="ux-desc">Recherche UX : utilisabilité et confiance dans l'IA, recherche ethnographique, accompagnement des équipes.</p></div></div>
       </li>
-      <li>
-        <div class="row static">
-          <svg class="glyph" viewBox="0 0 24 14" aria-hidden="true"><line x1="2" y1="7" x2="22" y2="7" stroke="#8A94A3" stroke-width="2" stroke-dasharray="3 3"/></svg>
-          <span class="p-name" data-i="next-name">D'autres projets suivront</span>
-          <span class="p-desc" data-i="next-desc">Écriture, histoire, architecture.</span>
-          <span class="p-state soon"></span>
-        </div>
+      <li class="entry">
+        <div class="line"><span class="note bl state wip keep" lang="en">Work in progress</span><div class="main"><span class="title t-hod bl" lang="en">A History of Disability</span></div></div>
+        <div class="line"><div class="main"><p class="bl" data-i="hod-desc">Essai historique sur le handicap avant la notion de handicap.</p></div></div>
+      </li>
+      <li class="entry">
+        <div class="line"><span class="note bl state wip keep" lang="en">Work in progress</span><div class="main"><span class="title t-rosa bl" lang="en">Rosa &amp; The Land's End</span></div></div>
+        <div class="line"><div class="main"><p class="bl" data-i="rosa-desc">Roman jeunesse, à la pointe de la Cornouailles.</p></div></div>
       </li>
     </ul>
   </section>
 </main>
 
-<footer class="wrap contact">
-  <p><span data-i="write">Pour m'écrire :</span> <a href="mailto:xaviateur@gmail.com">xaviateur@gmail.com</a></p>
-  <p class="small">© 2026 Xavier Marie</p>
+<footer class="line contact">
+  <div class="main">
+    <p class="big bl"><span data-i="write">Pour m'écrire :</span> <a href="mailto:bonjour@xaviermarie.com">bonjour@xaviermarie.com</a></p>
+    <p class="small bl">© 2026 Xavier Marie</p>
+  </div>
 </footer>
 
 <script>
 const t = {
   fr: {
     bio: 'Ethnologue et chercheur en expérience utilisateur.',
-    place: 'Entre Londres et le sud de la France.',
-    projects: 'Projets', 'projects-note': 'Ce qui est en ligne, et ce qui se prépare.',
+    place: 'Entre Londres, Paris et Montpellier.',
+    projects: 'Projets', live: 'En ligne',
     'ramps-desc': "L'architecture de l'accessibilité : galerie, guides et essais, d'après le livre de Michael Daniels (1986).",
-    live: 'En ligne', soon: 'En préparation',
     'ux-desc': "Recherche UX : utilisabilité et confiance dans l'IA, recherche ethnographique, accompagnement des équipes.",
-    'next-name': "D'autres projets suivront", 'next-desc': 'Écriture, histoire, architecture.',
+    'hod-desc': 'Essai historique sur le handicap avant la notion de handicap.',
+    'rosa-desc': 'Roman jeunesse, à la pointe de la Cornouailles.',
     write: "Pour m'écrire :",
-    desc: "Xavier Marie, ethnologue et chercheur en expérience utilisateur."
+    desc: 'Xavier Marie, ethnologue et chercheur en expérience utilisateur.'
   },
   en: {
     bio: 'Ethnologist and user experience researcher.',
-    place: 'Between London and the south of France.',
-    projects: 'Projects', 'projects-note': "What's live, and what's in the works.",
+    place: 'Between London, Paris and Montpellier.',
+    projects: 'Projects', live: 'Live',
     'ramps-desc': "The architecture of accessibility: gallery, guides and essays, after Michael Daniels' 1986 book.",
-    live: 'Live', soon: 'In preparation',
     'ux-desc': 'UX research: AI usability and trust, ethnographic research, team coaching.',
-    'next-name': 'More projects to come', 'next-desc': 'Writing, history, architecture.',
+    'hod-desc': 'A historical essay on disability before the idea of disability.',
+    'rosa-desc': "A novel for young readers, set at the tip of Cornwall.",
     write: 'Write to me:',
     desc: 'Xavier Marie, ethnologist and user experience researcher.'
   }
