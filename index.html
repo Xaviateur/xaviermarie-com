@@ -19,6 +19,13 @@
 @font-face { font-family: 'Schibsted Grotesk'; font-weight: 500; font-display: swap; src: url('./fonts/schibsted-grotesk-latin-500-normal.woff2') format('woff2'); }
 @font-face { font-family: 'Schibsted Grotesk'; font-weight: 800; font-display: swap; src: url('./fonts/schibsted-grotesk-latin-800-normal.woff2') format('woff2'); }
 
+/* Each project title is set in its own face, to show it has its own identity:
+   Comic Neue (OFL) for User Friendly, Libre Baskerville (OFL) for the history essay,
+   Yellowtail (Apache 2.0) for the novel. Licences in fonts/. */
+@font-face { font-family: 'Comic Neue'; font-weight: 700; font-display: swap; src: url('./fonts/comic-neue-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Libre Baskerville'; font-weight: 400; font-display: swap; src: url('./fonts/libre-baskerville-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Yellowtail'; font-weight: 400; font-display: swap; src: url('./fonts/yellowtail-latin-400-normal.woff2') format('woff2'); }
+
 /* A Seyès notebook page: 8 mm squares with three fine lines in between, and a red margin.
    One square = --u. Every size and gap is a multiple of it, so text lands on the ruling. */
 :root {
@@ -80,6 +87,9 @@ h2 { font-size: 1em; font-weight: 800; }
 .entry .note { line-height: calc(var(--u) * 2); top: calc(var(--u) * .4); }
 .title { display: inline-block; font-size: calc(var(--u) * 1.1); line-height: calc(var(--u) * 2); font-weight: 800; letter-spacing: -.03em; color: var(--ink); text-decoration: none; top: calc(var(--u) * .4); }
 a.title:hover, a.title:focus-visible { color: var(--blue); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .15em; }
+.t-uf { font-family: 'Comic Neue', 'Comic Sans MS', cursive; font-weight: 700; letter-spacing: -.01em; }
+.t-hod { font-family: 'Libre Baskerville', 'Baskerville', Georgia, serif; font-weight: 400; letter-spacing: -.01em; font-size: calc(var(--u) * 1.02) !important; }
+.t-rosa { font-family: 'Yellowtail', 'Brush Script MT', cursive; font-weight: 400; letter-spacing: 0; font-size: calc(var(--u) * 1.4) !important; }
 .title .sw { display: inline-block; width: .5em; height: .62em; margin-left: .3em; vertical-align: baseline; }
 .entry p { color: var(--pencil); max-width: 52ch; }
 .state::before { content: ''; display: inline-block; width: .55em; height: .55em; border-radius: 50%; margin-right: .45em; vertical-align: .02em; }
@@ -126,15 +136,15 @@ a.title:hover, a.title:focus-visible { color: var(--blue); text-decoration: unde
         <div class="line"><div class="main"><p class="bl" data-i="ramps-desc">L'architecture de l'accessibilité : galerie, guides et essais, d'après le livre de Michael Daniels (1986).</p></div></div>
       </li>
       <li class="entry">
-        <div class="line"><span class="note bl state live keep" data-i="live">En ligne</span><div class="main"><a class="title bl" href="https://user-friendly.fr/">User Friendly<svg class="sw" viewBox="0 0 10 13" aria-hidden="true" focusable="false"><rect x="4" y="0" width="2.2" height="13" fill="#1F6F66"/></svg></a></div></div>
+        <div class="line"><span class="note bl state live keep" data-i="live">En ligne</span><div class="main"><a class="title t-uf bl" href="https://user-friendly.fr/">User Friendly<svg class="sw" viewBox="0 0 10 13" aria-hidden="true" focusable="false"><rect x="4" y="0" width="2.2" height="13" fill="#1F6F66"/></svg></a></div></div>
         <div class="line"><div class="main"><p class="bl" data-i="ux-desc">Recherche UX : utilisabilité et confiance dans l'IA, recherche ethnographique, accompagnement des équipes.</p></div></div>
       </li>
       <li class="entry">
-        <div class="line"><span class="note bl state wip keep" lang="en">Work in progress</span><div class="main"><span class="title bl" lang="en">A History of Disability</span></div></div>
+        <div class="line"><span class="note bl state wip keep" lang="en">Work in progress</span><div class="main"><span class="title t-hod bl" lang="en">A History of Disability</span></div></div>
         <div class="line"><div class="main"><p class="bl" data-i="hod-desc">Essai historique sur le handicap avant la notion de handicap.</p></div></div>
       </li>
       <li class="entry">
-        <div class="line"><span class="note bl state wip keep" lang="en">Work in progress</span><div class="main"><span class="title bl" lang="en">Rosa &amp; The Land's End</span></div></div>
+        <div class="line"><span class="note bl state wip keep" lang="en">Work in progress</span><div class="main"><span class="title t-rosa bl" lang="en">Rosa &amp; The Land's End</span></div></div>
         <div class="line"><div class="main"><p class="bl" data-i="rosa-desc">Roman jeunesse, à la pointe de la Cornouailles.</p></div></div>
       </li>
     </ul>
