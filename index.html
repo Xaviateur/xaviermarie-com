@@ -126,6 +126,7 @@ a.title:hover, a.title:focus-visible { color: var(--blue); text-decoration: unde
 .contact .small { color: var(--pencil); }
 
 @media (max-width: 760px) {
+  body { font-size: calc(var(--u) * .667); }   /* 16px: the smaller square must not shrink the text */
   .note { display: none; }
   .note.keep { display: block; grid-column: 2; grid-row: 1; text-align: left; padding: 0 calc(var(--u) * .75); line-height: var(--u); top: calc(var(--u) * .2); }
   .line:has(.note.keep) > .main { grid-row: 2; }
