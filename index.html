@@ -3,12 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xavier Marie</title>
+<title>Xavier Marie — Ethnologue et chercheur en expérience utilisateur</title>
 <meta name="description" content="Xavier Marie, ethnologue et chercheur en expérience utilisateur. Projets : Ramps are Beautiful, User Friendly, deux livres en cours.">
-<meta property="og:title" content="Xavier Marie">
-<meta property="og:description" content="Ethnologue et chercheur en expérience utilisateur. Projets et contact.">
+<link rel="canonical" href="https://xaviermarie.com/">
+<meta property="og:site_name" content="Xavier Marie">
+<meta property="og:title" content="Xavier Marie — Ethnologue et chercheur en expérience utilisateur">
+<meta property="og:description" content="Ethnologue et chercheur en expérience utilisateur. Projets : Ramps are Beautiful, User Friendly, deux livres en cours.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://xaviermarie.com/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:image" content="https://xaviermarie.com/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Xavier Marie, ethnologue et chercheur en expérience utilisateur, écrit sur une page de cahier à réglure Seyès.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Xavier Marie",
+  "url": "https://xaviermarie.com/",
+  "image": "https://xaviermarie.com/og-image.png",
+  "jobTitle": "Ethnologue et chercheur en expérience utilisateur",
+  "description": "Ethnologue et chercheur en expérience utilisateur, entre Londres, Paris et Montpellier.",
+  "knowsLanguage": ["fr", "en"],
+  "sameAs": ["https://www.linkedin.com/in/xaviermarie/"]
+}
+</script>
 <meta name="theme-color" content="#FBFBF8">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23FBFBF8'/%3E%3Cpath d='M0 16H64M0 32H64M0 48H64' stroke='%23BFC8EC' stroke-width='2'/%3E%3Cpath d='M14 0V64' stroke='%23D8485E' stroke-width='3'/%3E%3Ctext x='38' y='44' font-family='Arial,sans-serif' font-weight='800' font-size='30' text-anchor='middle' fill='%231B2240'%3EX%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="./fonts/schibsted-grotesk-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -103,6 +126,7 @@ a.title:hover, a.title:focus-visible { color: var(--blue); text-decoration: unde
 .contact .small { color: var(--pencil); }
 
 @media (max-width: 760px) {
+  body { font-size: calc(var(--u) * .667); }   /* 16px: the smaller square must not shrink the text */
   .note { display: none; }
   .note.keep { display: block; grid-column: 2; grid-row: 1; text-align: left; padding: 0 calc(var(--u) * .75); line-height: var(--u); top: calc(var(--u) * .2); }
   .line:has(.note.keep) > .main { grid-row: 2; }
@@ -126,7 +150,7 @@ a.title:hover, a.title:focus-visible { color: var(--blue); text-decoration: unde
 <main>
   <div>
     <div class="line name"><div class="main"><h1>Xavier Marie</h1></div></div>
-    <div class="line"><div class="main"><p class="bio bl" data-i="bio">Ethnologue et chercheur en expérience utilisateur.</p></div></div>
+    <div class="line"><div class="main"><p class="bio bl" data-i="bio">Ethnologue et chercheur UX : j'étudie comment les gens comprennent les produits d'IA et leur font confiance.</p></div></div>
     <div class="line"><div class="main"><p class="bio bio2 bl" data-i="place">Entre Londres, Paris et Montpellier.</p></div></div>
   </div>
 
@@ -134,11 +158,11 @@ a.title:hover, a.title:focus-visible { color: var(--blue); text-decoration: unde
     <div class="line projects-h"><div class="main"><h2 id="h-projects" class="bl" data-i="projects">Projets</h2></div></div>
     <ul class="entries">
       <li class="entry">
-        <div class="line"><span class="note bl state live keep" data-i="live">En ligne</span><div class="main"><a class="title bl" href="https://ramps.xaviermarie.com/">Ramps are Beautiful<svg class="sw" viewBox="335 70 515 655" aria-hidden="true" focusable="false"><g fill="#C4502B"><path d="M833.556,367.574c-7.753-7.955-18.586-12.155-29.656-11.549l-133.981,7.458l73.733-83.975 c10.504-11.962,13.505-27.908,9.444-42.157c-2.143-9.764-8.056-18.648-17.14-24.324c-0.279-0.199-176.247-102.423-176.247-102.423 c-14.369-8.347-32.475-6.508-44.875,4.552l-85.958,76.676c-15.837,14.126-17.224,38.416-3.097,54.254 c14.128,15.836,38.419,17.227,54.255,3.096l65.168-58.131l53.874,31.285l-95.096,108.305 c-39.433,6.431-74.913,24.602-102.765,50.801l49.66,49.66c22.449-20.412,52.256-32.871,84.918-32.871 c69.667,0,126.346,56.68,126.346,126.348c0,32.662-12.459,62.467-32.869,84.916l49.657,49.66 c33.08-35.166,53.382-82.484,53.382-134.576c0-31.035-7.205-60.384-20.016-86.482l51.861-2.889l-12.616,154.75 c-1.725,21.152,14.027,39.695,35.18,41.422c1.059,0.086,2.116,0.127,3.163,0.127c19.806,0,36.621-15.219,38.257-35.306 l16.193-198.685C845.235,386.445,841.305,375.527,833.556,367.574z"/><path d="M762.384,202.965c35.523,0,64.317-28.797,64.317-64.322c0-35.523-28.794-64.323-64.317-64.323 c-35.527,0-64.323,28.8-64.323,64.323C698.061,174.168,726.856,202.965,762.384,202.965z"/><path d="M535.794,650.926c-69.668,0-126.348-56.68-126.348-126.348c0-26.256,8.056-50.66,21.817-70.887l-50.196-50.195 c-26.155,33.377-41.791,75.393-41.791,121.082c0,108.535,87.983,196.517,196.518,196.517c45.691,0,87.703-15.636,121.079-41.792 l-50.195-50.193C586.452,642.867,562.048,650.926,535.794,650.926z"/></g></svg></a></div></div>
+        <div class="line"><span class="note bl state live keep" data-i="live">En ligne</span><div class="main"><a class="title bl" href="https://ramps.xaviermarie.com/" lang="en">Ramps are Beautiful<svg class="sw" viewBox="335 70 515 655" aria-hidden="true" focusable="false"><g fill="#C4502B"><path d="M833.556,367.574c-7.753-7.955-18.586-12.155-29.656-11.549l-133.981,7.458l73.733-83.975 c10.504-11.962,13.505-27.908,9.444-42.157c-2.143-9.764-8.056-18.648-17.14-24.324c-0.279-0.199-176.247-102.423-176.247-102.423 c-14.369-8.347-32.475-6.508-44.875,4.552l-85.958,76.676c-15.837,14.126-17.224,38.416-3.097,54.254 c14.128,15.836,38.419,17.227,54.255,3.096l65.168-58.131l53.874,31.285l-95.096,108.305 c-39.433,6.431-74.913,24.602-102.765,50.801l49.66,49.66c22.449-20.412,52.256-32.871,84.918-32.871 c69.667,0,126.346,56.68,126.346,126.348c0,32.662-12.459,62.467-32.869,84.916l49.657,49.66 c33.08-35.166,53.382-82.484,53.382-134.576c0-31.035-7.205-60.384-20.016-86.482l51.861-2.889l-12.616,154.75 c-1.725,21.152,14.027,39.695,35.18,41.422c1.059,0.086,2.116,0.127,3.163,0.127c19.806,0,36.621-15.219,38.257-35.306 l16.193-198.685C845.235,386.445,841.305,375.527,833.556,367.574z"/><path d="M762.384,202.965c35.523,0,64.317-28.797,64.317-64.322c0-35.523-28.794-64.323-64.317-64.323 c-35.527,0-64.323,28.8-64.323,64.323C698.061,174.168,726.856,202.965,762.384,202.965z"/><path d="M535.794,650.926c-69.668,0-126.348-56.68-126.348-126.348c0-26.256,8.056-50.66,21.817-70.887l-50.196-50.195 c-26.155,33.377-41.791,75.393-41.791,121.082c0,108.535,87.983,196.517,196.518,196.517c45.691,0,87.703-15.636,121.079-41.792 l-50.195-50.193C586.452,642.867,562.048,650.926,535.794,650.926z"/></g></svg></a></div></div>
         <div class="line"><div class="main"><p class="bl" data-i="ramps-desc">L'architecture de l'accessibilité : galerie, guides et essais, d'après le livre de Michael Daniels (1986).</p></div></div>
       </li>
       <li class="entry">
-        <div class="line"><span class="note bl state live keep" data-i="live">En ligne</span><div class="main"><a class="title t-uf bl" href="https://user-friendly.fr/"><span class="q" aria-hidden="true">“</span>User Friendly<span class="q" aria-hidden="true">”</span></a></div></div>
+        <div class="line"><span class="note bl state live keep" data-i="live">En ligne</span><div class="main"><a class="title t-uf bl" href="https://user-friendly.fr/" lang="en"><span class="q" aria-hidden="true">“</span>User Friendly<span class="q" aria-hidden="true">”</span></a></div></div>
         <div class="line"><div class="main"><p class="bl" data-i="ux-desc">Recherche UX : utilisabilité et confiance dans l'IA, recherche ethnographique, accompagnement des équipes.</p></div></div>
       </li>
       <li class="entry">
@@ -163,7 +187,7 @@ a.title:hover, a.title:focus-visible { color: var(--blue); text-decoration: unde
 <script>
 const t = {
   fr: {
-    bio: 'Ethnologue et chercheur en expérience utilisateur.',
+    bio: "Ethnologue et chercheur UX : j'étudie comment les gens comprennent les produits d'IA et leur font confiance.",
     place: 'Entre Londres, Paris et Montpellier.',
     projects: 'Projets', live: 'En ligne',
     'ramps-desc': "L'architecture de l'accessibilité : galerie, guides et essais, d'après le livre de Michael Daniels (1986).",
@@ -171,10 +195,11 @@ const t = {
     'hod-desc': 'Essai historique sur le handicap avant la notion de handicap.',
     'rosa-desc': 'Roman jeunesse, à la pointe de la Cornouailles.',
     write: "Pour m'écrire :",
-    desc: 'Xavier Marie, ethnologue et chercheur en expérience utilisateur.'
+    title: 'Xavier Marie — Ethnologue et chercheur en expérience utilisateur',
+    desc: 'Xavier Marie, ethnologue et chercheur en expérience utilisateur. Projets : Ramps are Beautiful, User Friendly, deux livres en cours.'
   },
   en: {
-    bio: 'Ethnologist and user experience researcher.',
+    bio: 'Ethnologist and UX researcher: I study how people understand AI products and come to trust them.',
     place: 'Between London, Paris and Montpellier.',
     projects: 'Projects', live: 'Live',
     'ramps-desc': "The architecture of accessibility: gallery, guides and essays, after Michael Daniels' 1986 book.",
@@ -182,12 +207,13 @@ const t = {
     'hod-desc': 'A historical essay on disability before the idea of disability.',
     'rosa-desc': "A novel for young readers, set at the tip of Cornwall.",
     write: 'Write to me:',
-    desc: 'Xavier Marie, ethnologist and user experience researcher.'
+    title: 'Xavier Marie — Ethnologist and user experience researcher',
+    desc: 'Xavier Marie, ethnologist and user experience researcher. Projects: Ramps are Beautiful, User Friendly, two books in progress.'
   }
 };
 function setLang(l) {
   l = l === 'en' ? 'en' : 'fr';
-  document.documentElement.lang = l;
+  document.documentElement.lang = l; document.title = t[l].title;
   document.querySelectorAll('[data-i]').forEach(el => { const v = t[l][el.dataset.i]; if (v) el.textContent = v; });
   document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === l)));
   document.querySelector('meta[name=description]').setAttribute('content', t[l].desc);
